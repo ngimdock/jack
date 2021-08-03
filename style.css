@@ -198,7 +198,6 @@ main{
 	line-height: 0px;
 	letter-spacing: 4px;
 	margin-bottom: 10px;
-	background: red !important;
 }
 
 .name::after{
@@ -380,9 +379,147 @@ main{
     margin-top: 8px;
 }
 
+.desc-project{
+	margin-top: 50px;
+	height: 90px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.desc-project > p{
+	font-size: 18px;
+	line-height: 25px;
+	font-family: roboto, sans-serif;
+}
+
+.desc-project > p em{
+	margin-left: 20px;
+	font-weight: 400 !important;
+	color: white;
+	font-style: normal;
+	font-size: 17px;
+}
+
+.desc-project > p::before{
+	content: "<p>";
+	display: block;
+    font-family: 'Marck Script', cursive;
+    font-size: 18px;
+    font-style: italic;
+    color: #515152;
+    font-weight: 500;
+    line-height: 0px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.desc-project > p::after{
+	content: "<p/>";
+	display: block;
+    font-family: 'Marck Script', cursive;
+    font-size: 18px;
+    font-style: italic;
+    color: #515152;
+    font-weight: 500;
+    line-height: 0px;
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+.desc-project > p em a{
+	text-decoration: none;
+	color: #08fdd8;
+}
+
+.desc-project > p em a:hover{
+	opacity: .3;
+}
+
+.see-more{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+}
+
+.section-tag{
+	margin: 0px 0 10px 20px;
+	display: block;
+    font-family: 'Marck Script', cursive;
+    font-size: 18px;
+    font-style: italic;
+    color: #515152;
+    font-weight: 500;
+    line-height: 0px;
+    letter-spacing: 3px;
+}
+
+/*.galary-projects::after{
+	content: "<section>";
+	margin: 20px 0 0 20px;
+	display: block;
+    font-family: 'Marck Script', cursive;
+    font-size: 18px;
+    font-style: italic;
+    color: #515152;
+    font-weight: 500;
+    line-height: 0px;
+    letter-spacing: 3px;
+}*/
+
+.galary-projects{
+	width: 100% !important;
+	margin-top: 120px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 320px);
+}
+
+.project{
+	opacity: .5;
+}
+
+.project-img-box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.project-img-box img{
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	height: 100%;
+	transition: 250ms all linear;
+}
 
 
+.view-project{
+	color: black;
+	position: absolute;
+	z-index: 40;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) !important;
+	border-radius: 100%;
+	background:  #08fdd8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: roboto, sans-serif;
+	font-weight: 300;
+}
 
+.project-img-box:hover img{
+	transform: scale(1.2);
+}
+
+.project-img-box:hover .view-project{
+	transform: scale(1.25);
+}
 /*---------------------------------------------------------------- class animation--------------------------------------------*/
 
 .translate-bg{
@@ -391,4 +528,11 @@ main{
 
 .scroll-anim{
 	top: 17px !important;
+}
+
+.view-project-anim{
+	width: 100px !important;
+	height: 100px !important;
+	font-size: 16px !important;
+	opacity: 1 !important;
 }
