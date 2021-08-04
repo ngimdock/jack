@@ -26,6 +26,7 @@ aside{
 	z-index: 3;
 }
 
+
 .logo-box{
 	width: 100%;
 	height: 190px;
@@ -148,6 +149,7 @@ main{
 .presentation{
 	padding-left: 40px !important;
 	background: #1d1d1d;
+	margin-bottom: 135px;
 }
 
 .tag{
@@ -310,7 +312,6 @@ main{
 .scroll-box{
 	display: flex;
 	justify-content: space-between;
-	margin-top: 120px;
 }
 
 .scroll-box p{
@@ -340,7 +341,7 @@ main{
 	position: relative;
 }
 
-.description h2{
+.sub-title{
 	counter-reset: #08fdd8;
 	font-family: 'Roboto', sans-serif;
     font-weight: 900;
@@ -349,11 +350,11 @@ main{
     color: #08fdd8;
 }
 
-.description h2 > span{
+.sub-title > span{
 	margin-left: 25px;
 }
 
-.description h2::before{
+.sub-title::before{
 	content: "<h2>";
 	display: block;
 	font-family: 'Marck Script', cursive;
@@ -366,7 +367,7 @@ main{
     margin-bottom: 5px;
 }
 
-.description h2::after{
+.sub-title::after{
 	content: "<h2/>";
 	display: block;
 	font-family: 'Marck Script', cursive;
@@ -387,13 +388,15 @@ main{
 	align-items: flex-start;
 }
 
-.desc-project > p{
+.paragraph-box{
 	font-size: 18px;
 	line-height: 25px;
 	font-family: roboto, sans-serif;
+	color: white;
+	margin-top: 20px;
 }
 
-.desc-project > p em{
+.paragraph-box p{
 	margin-left: 20px;
 	font-weight: 400 !important;
 	color: white;
@@ -401,7 +404,7 @@ main{
 	font-size: 17px;
 }
 
-.desc-project > p::before{
+.paragraph-box::before{
 	content: "<p>";
 	display: block;
     font-family: 'Marck Script', cursive;
@@ -414,7 +417,7 @@ main{
     margin-bottom: 8px;
 }
 
-.desc-project > p::after{
+.paragraph-box::after{
 	content: "<p/>";
 	display: block;
     font-family: 'Marck Script', cursive;
@@ -427,12 +430,12 @@ main{
     margin-top: 8px;
 }
 
-.desc-project > p em a{
+.paragraph-box p a{
 	text-decoration: none;
 	color: #08fdd8;
 }
 
-.desc-project > p em a:hover{
+.paragraph-box p a:hover{
 	opacity: .3;
 }
 
@@ -453,11 +456,12 @@ main{
     font-weight: 500;
     line-height: 0px;
     letter-spacing: 3px;
+    margin-top: 120px;
 }
 
-/*.galary-projects::after{
+.galary-projects::after{
 	content: "<section>";
-	margin: 20px 0 0 20px;
+	margin: 35px 0 0 20px;
 	display: block;
     font-family: 'Marck Script', cursive;
     font-size: 18px;
@@ -466,14 +470,14 @@ main{
     font-weight: 500;
     line-height: 0px;
     letter-spacing: 3px;
-}*/
+}
 
 .galary-projects{
 	width: 100% !important;
-	margin-top: 120px;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(2, 320px);
+	margin: 25px 0;
 }
 
 .project{
@@ -511,6 +515,10 @@ main{
 	text-align: center;
 	font-family: roboto, sans-serif;
 	font-weight: 300;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	transition: 200ms all ease;
 }
 
 .project-img-box:hover img{
@@ -519,6 +527,36 @@ main{
 
 .project-img-box:hover .view-project{
 	transform: scale(1.25);
+}
+
+.mySelf{
+	width: 92%;
+	margin: 160px auto 0 auto;
+	display: flex;
+}
+
+.truc{
+	display: block;
+	min-width: 100% !important;
+	padding-right: 30px;
+}
+
+.s-left .paragraph-box div  p:nth-child(2){
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.s-left{
+	width: 40%;
+}
+
+.s-right{
+	width: 60% !important;
+	padding-right: 50px;
+}
+
+#tag{
+	float: right;
 }
 /*---------------------------------------------------------------- class animation--------------------------------------------*/
 
@@ -531,8 +569,8 @@ main{
 }
 
 .view-project-anim{
-	width: 100px !important;
-	height: 100px !important;
-	font-size: 16px !important;
+	width: 90px !important;
+	height: 90px !important;
+	font-size: 13px !important;
 	opacity: 1 !important;
 }
