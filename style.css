@@ -12,6 +12,7 @@ body{
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
+	overflow-x: hidden;
 }
 
 aside{
@@ -661,9 +662,9 @@ main{
 .contact{
 	width: 95%;
 	margin: 150px auto 0 auto;
-	background: blue;
 	display: flex;
 	float: right;
+	height: 900px !important;
 }
 .c-left{
 	padding-right: 30px;
@@ -716,25 +717,29 @@ input, textarea{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	background: gray !important;
 }
 
-input[type="text"], input[type="email"]{
+.c-name-box, .c-email-box{
 	width: 50%;
-	margin-bottom: 10px;
 }
 
-input[placeholder="Name"]{
-	margin-right: 5px;
+.c-name, .c-email{
+	width: 100%;
 }
 
-input[placeholder="Email"]{
-	margin-left: 5px;
+
+.c-subject-box{
+	width: 100% !important;
 }
+
+.c-subject{
+	width: 100% !important;
+}
+
 
 input[placeholder="Subject"]{
 	width: 100%;
-	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 textarea{
@@ -742,17 +747,142 @@ textarea{
 	height: 200px;
 	max-height: 400px !important;
 	padding-top: 10px;
-	margin-bottom: 10px;
+	opacity: hidden;
 }
 
 .send-message{
 	float: right;
+	margin-top: 45px;
 }
 
-/*.c-right{
+.close-tag-html::before{
+	content: "</body>";
+	display: block;
+	margin-left: 20px;
+}
+
+.close-tag-html{
 	position: absolute;
-	right: 0;
-}*/
+	bottom: 30px;
+	left: 50px;
+}
+
+.jacek-Jeznach{
+	position: relative;
+	top: 40px;
+	left: 40px;
+	background: black;
+	color: white;
+	width: 280px;
+	height:150px;
+	background-color: rgba(0, 0, 0, 0.9);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 25px;
+}
+
+.have-any-question{
+	position: absolute;
+	right: 30px;
+	bottom: 200px;
+	height: 80px;
+	width: 320px;
+	font-size: 16px;
+	color: white;
+	background: black;
+	padding: 40px 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.jacek-Jeznach address a{
+	text-decoration: none;
+	color: white;
+}
+
+.jacek-Jeznach address a span{
+	color: #08fdd8;
+	font-size: 20px;
+}
+
+.c-right{
+	position: relative;
+	background-image: url("./img/pos.png");
+	background-repeat: no-repeat;
+	min-width: 50%;
+	background-color: rgba(8, 253, 216, 0.8);
+}
+
+.c-name, .e-mail{
+	display: block;
+	height: 100%;
+}
+
+.c-name-box, .c-email-box{
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.c-name-box{
+	margin-right: 5px;
+	position: relative;
+}
+
+.c-email-box{
+	margin-left: 5px;
+	position: relative;
+}
+
+.c-subject-box{
+	width: 100% !important;}
+
+.c-subject-box{
+	position: relative;
+}
+
+.c-message-box{
+	position: relative;
+}
+
+.c-message-box{
+	margin-top: 10px;
+}
+.c-name-box > div, 
+.c-email-box > div,
+.c-subject-box > div,
+.c-message-box > div{
+	content: "";
+	position: absolute;
+	background: #08fdd8;
+	display: block;
+	z-index: 200;
+	margin-bottom: 10px !important;
+}
+
+.c-name-box > div, 
+.c-email-box > div{
+	width: 1px;
+	height: 2px;
+	transition: .5s width ease;
+}
+
+.c-subject-box > div,
+.c-message-box > div{
+	width: 0;
+	height: 2px;
+	transition: .5s width ease;
+}
+
+.c-name:focus, 
+.c-email:focus,
+.c-subject:focus,
+.c-message:focus{
+	width: 100% !important;
+}
+
+
 /*---------------------------------------------------------------- class animation--------------------------------------------*/
 
 .translate-bg{
@@ -769,3 +899,4 @@ textarea{
 	font-size: 13px !important;
 	opacity: 1 !important;
 }
+

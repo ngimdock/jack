@@ -57,3 +57,47 @@ const EffectImagePortFolio = () => {
 };
 
 EffectImagePortFolio();
+
+
+const animFormItems = () => {
+	const formItems = document.querySelectorAll(".form-item");
+	const formItenAfter = document.querySelectorAll(".form-item ~ div");
+	console.log(formItems);
+	console.log(formItenAfter);
+
+	for (let j = 0; j < formItems.length; j++) {
+		let i = j;
+		formItems[i].onfocus = () => {
+			console.log(formItenAfter[i])
+			formItenAfter[i].classList.add("translate-bg")
+			if(formItems[i].placeholder === ""){
+				formItems[i].innerText = "";
+			}else{
+				formItems[i].placeholder = "";
+			}
+		};
+
+		formItems[i].onblur = function() {
+			console.log('dans le blur');
+			formItenAfter[i].classList.remove("translate-bg");
+			switch(i){
+				case 0:
+					this.placeholder = "Name"
+					break;
+				case 1:
+					this.placeholder = "Email";
+					break;
+				case 2:
+					this.placeholder = "Subject";
+					break;
+				case 3:
+					this.innerText = "Message";
+					break;
+				default :
+					// nothing here
+			}
+		};
+	}
+};
+
+animFormItems();
