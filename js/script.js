@@ -150,9 +150,6 @@ const displayElementWhentScrolling = () => {
 	const otherElements = document.querySelectorAll(".revel-bottom, .c-right");
 	const haveAnyQuestion = document.querySelector(".revel-right");
 
-	console.log(otherElements);
-
-	console.log(haveAnyQuestion);
 
 	otherElements.forEach(elt => {
 		observer1.observe(elt); // observation de tous les elements selectionne
@@ -176,4 +173,16 @@ const animateWebsiteHead = () => {
 
 window.onload = () => {
 	animateWebsiteHead();
+	animateText();
+};
+
+const presentationWords = document.querySelectorAll(".presentation-word");
+
+let delay = 0;
+const animateText = () => {
+	presentationWords.forEach(word => {
+		word.style.transition = `all .8s ${delay} linear !important`;
+		word.classList.add("presentation-anim");
+		delay += 0.4;
+	})
 };
