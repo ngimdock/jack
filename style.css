@@ -12,7 +12,7 @@ body{
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 }
 
 aside{
@@ -134,17 +134,14 @@ nav li a:hover, .blog-article h3 a:hover{
 	cursor: pointer;
 }
 
-.awaard-honor{
-	position: fixed;
-	right: 0;
-	top: 100px;
-}
+
 main{
 	width: calc(100% - 130px);
 	position: relative;
 	left: 130px;
 	background: #1d1d1d;
 	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 .presentation{
@@ -231,6 +228,31 @@ main{
 	font-weight: 600;
 	letter-spacing: 6px;
 	font-size: 15px;
+	transition-property: opacity, transform;
+	transition-delay: .4s !important;
+	transition-duration: 1s !important;
+
+}
+
+.contact-me{
+	transition-delay: 1s !important;
+	transition-duration: 0.9s !important;
+}
+
+.awaard-honor{
+	position: fixed;
+	right: 0;
+	top: 100px;
+	z-index: 500;
+	transform: translateX(100%);
+	transition: transform 1s ease;
+	transition-delay: 0.8s;
+}
+
+.head-elt{
+	transform: translateY(50px);
+	opacity: 0;
+	transition-property: opacity, transform;
 }
 
 .job::before{
@@ -282,6 +304,16 @@ main{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+
+.awaardHonor-anim{
+	transform: translateX(0);
+}
+
+.head-anim{
+	opacity: 1 !important;
+	transform: translateY(0) !important;
 }
 
 
@@ -783,11 +815,11 @@ textarea{
 }
 
 .have-any-question{
-	position: absolute;
-	right: 30px;
-	bottom: 200px;
+	position: fixed;
+	right: 0;
+	bottom: 50px;
 	height: 80px;
-	width: 320px;
+	width: 300px;
 	font-size: 16px;
 	color: white;
 	background: black;
@@ -882,6 +914,31 @@ textarea{
 	width: 100% !important;
 }
 
+.revel-bottom{
+	opacity: 0;
+	transform: translateY(50px);
+	transition: all 0.5s ease;
+}
+
+.revel-right{
+	transform: translateX(100%);
+	transition: transform .2s linear;
+}
+
+.revel-visible{
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
+.revel-visible-right{
+	transform: translateX(0) !important;
+	right: 110px;
+}
+
+#revel-right-anim{
+	right: 40px !important;
+	transition: right .3s linear;
+}
 
 /*---------------------------------------------------------------- class animation--------------------------------------------*/
 
