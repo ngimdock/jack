@@ -7,6 +7,7 @@
 	padding: 0;
 }
 
+
 body{
 	background: #1d1d1d;
 	margin: 0;
@@ -15,17 +16,7 @@ body{
 	overflow-x: hidden !important;
 }
 
-aside{
-	position: fixed;
-	height: 100vh;
-	left: 0;
-	background:  #181818;
-	width: 130px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	z-index: 3;
-}
+
 
 
 .logo-box{
@@ -147,7 +138,7 @@ main{
 .presentation{
 	padding-left: 40px !important;
 	background: #1d1d1d;
-	margin-bottom: 135px;
+	margin-bottom: 100px;
 }
 
 .tag{
@@ -229,7 +220,7 @@ main{
 .awaard-honor{
 	position: fixed;
 	right: 0;
-	top: 100px;
+	top: 120px;
 	z-index: 500;
 	transform: translateX(100%);
 	transition: transform 1s ease;
@@ -366,7 +357,6 @@ main{
 	font-family: 'Roboto', sans-serif;
     font-weight: 900;
     letter-spacing: -3px;
-    font-size: 55px;
     color: #08fdd8;
 }
 
@@ -942,17 +932,35 @@ textarea{
 	padding-top: 0;
 	opacity: 0;
 	font-size: 0px;
+	transition-property: font-size, opacity;
+	transition-duration: 0.3s;
 }
 
+
 .presentation-anim{
-	opacity: 1 !important;
-	font-size: 95px !important;
+	opacity: 1;
 }
 
 .presentation-anim-size2{
 	font-size: 88px;
 }
 
+.sub-title-item{
+	font-size: 0px;
+}
+
+.logo{
+	opacity: 0;
+	transform: rotate(-230deg);
+}
+
+.logo-anim{
+	transform: rotate(0);
+	transition-property: all;
+	transition-delay: 720ms;
+	transition-duration: .2s;
+	opacity: 1;
+}
 /*---------------------------------------------------------------- class animation--------------------------------------------*/
 
 .translate-bg{
@@ -970,3 +978,97 @@ textarea{
 	opacity: 1 !important;
 }
 
+.amburger-box{
+	position: fixed;
+	right: 30px;
+	width: 60px;
+	justify-content: center;
+	top: 50px;
+	z-index: 900;
+	background: black;
+	display: none;
+}
+
+.bi{
+	font-size: 40px;
+	color: white;
+}
+
+/*#check{
+	display: none;
+}*/
+
+
+aside{
+	position: fixed;
+	height: 100vh;
+	left: 0;
+	background:  #181818;
+	width: 130px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 3;
+}
+
+.aside-anim{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+
+/*---------------------------------------------------------	media query------------------------------------------------------------------*/
+
+
+@media screen and (max-width : 1300px){
+	
+	aside{
+		display: none;
+	}
+
+	.amburger-box{
+		display: flex;
+		justify-content: center;
+	}
+
+
+	main{
+		left: 0;
+		width: 100%
+	}
+
+	.desc-project{
+		display: block;
+	}
+
+	.see-more{
+		margin-top: 30px !important;
+		margin-left: 20px;
+		position: relative !important;
+	}
+
+	.amburger{
+		flex-direction: column;
+	}
+
+	
+	rect{
+		x: 0;
+		y: 200;
+		width: 400px;
+		height: 330px;
+	}
+
+	.s-right{
+		padding-right: 0px;
+		margin-left: 40px;
+		width: 400px;
+		height: 330px;
+	}
+
+
+
+}

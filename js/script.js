@@ -120,12 +120,13 @@ const displayElementWhentScrolling = () => {
 		}, 80);
 
 		let timer2 = setTimeout(() => {
-						console.log('dans le timiout')
 						haveAnyQuestion.classList.remove("revel-visible-right");
 						haveAnyQuestion.id = ""
 						clearTimeout(timer2);
 					}, 5000);
 	};
+
+	// cette fonction permet d'afficher des elements avec des style au scroll
 
 	const displayOtherElement = (entries, observer1) => {
 		entries.forEach(entry => {
@@ -157,12 +158,13 @@ const displayElementWhentScrolling = () => {
 }
 
 displayElementWhentScrolling();
-
 // cette fonction permet d'animer la partie presentation de la page
-
 const animateWebsiteHead = () => {
 	const awaardHonor = document.querySelector(".awaard-honor");
 	const jobAndContactMe = document.querySelectorAll(".head-elt");
+	const letterJ = document.querySelector(".logo");
+
+	letterJ.classList.add("logo-anim");
 
 	awaardHonor.classList.add("awaardHonor-anim");
 	[...jobAndContactMe].forEach(elt => {
@@ -171,18 +173,95 @@ const animateWebsiteHead = () => {
 
 };
 
-window.onload = () => {
-	animateWebsiteHead();
-	animateText();
+
+const animateText = (index, delay, fontSize, caracterTable) => {
+	caracterTable[index].style.transitionDelay = delay + "ms";
+	caracterTable[index].style.fontSize = fontSize + "px";
+	caracterTable[index].classList.add("presentation-anim");
+	if(index < caracterTable.length-1){
+
+		index++;
+		delay += 130;
+		return animateText(index, delay, fontSize, caracterTable);
+	}
+	return;
 };
+
+
+// cette fonction permet d'animer les titres se section
+const displaySubTitleWhenScrolling = () => {
+
+	const ratio = 0.2;
+	var options = {
+	  root: null,
+	  rootMargin: '0px',
+	  threshold: ratio
+	}
+
+	const handleIntersectSubTitle = (entries, observer) => {
+		entries.forEach(entry => {
+			if(entry.intersectionRatio > ratio){
+				animateText(0, 0, 55, subTitles);
+			}else{
+			}
+		})
+
+	};
+
+
+	const observer = new IntersectionObserver(handleIntersectSubTitle, options);
+
+	const subTitles = document.querySelectorAll(".sub-title-item");
+	const subTitlesBox = document.querySelectorAll(".sub-title");
+	const crossIncon = document.querySelector(".bi-x-lg")
+	subTitlesBox.forEach(titleBox => {
+		observer.observe(titleBox);
+	})
+};
+
+
+displaySubTitleWhenScrolling();
 
 const presentationWords = document.querySelectorAll(".presentation-word");
 
-let delay = 0;
-const animateText = () => {
-	presentationWords.forEach(word => {
-		word.style.transition = `all .8s ${delay} linear !important`;
-		word.classList.add("presentation-anim");
-		delay += 0.4;
+window.onload = () => {
+	animateWebsiteHead();
+	animateText(0, 0, 95, presentationWords);
+
+};
+
+
+// ici je rend la bar de navigation responsive
+
+const check = document.querySelector("#check");
+const aside = document.querySelector("aside");
+const burgerIcon = document.querySelector(".bi-justify");
+const checkLabel = document.querySelector(".check-label");
+
+const navItems = document.querySelectorAll(".nav-item");
+
+console.log(navItems)
+
+const check2 = document.createElement("i");
+check2.className = "bi bi-x-lg";
+
+console.log(check2);
+
+
+const displayAsideBar = () => {
+	if(check.checked){
+		aside.classList.add("aside-anim");
+		checkLabel.replaceChild(check2, burgerIcon);
+	}else{
+		aside.classList.remove("aside-anim");
+		checkLabel.replaceChild(burgerIcon, check2);
+	}
+
+	navItems.forEach(item => {
+		item.onclick = () => {
+			check.checked = false;
+		};
 	})
 };
+
+check.onclick = () => displayAsideBar();
