@@ -66,7 +66,6 @@ const animFormItems = () => {
 	for (let j = 0; j < formItems.length; j++) {
 		let i = j;
 		formItems[i].onfocus = () => {
-			console.log(formItenAfter[i])
 			formItenAfter[i].classList.add("translate-bg")
 			if(formItems[i].placeholder === ""){
 				formItems[i].innerText = "";
@@ -76,7 +75,6 @@ const animFormItems = () => {
 		};
 
 		formItems[i].onblur = function() {
-			console.log('dans le blur');
 			formItenAfter[i].classList.remove("translate-bg");
 			switch(i){
 				case 0:
@@ -199,10 +197,18 @@ const displaySubTitleWhenScrolling = () => {
 	}
 
 	const handleIntersectSubTitle = (entries, observer) => {
+
+		const innerWidth = window.innerWidth;
 		entries.forEach(entry => {
 			if(entry.intersectionRatio > ratio){
-				animateText(0, 0, 55, subTitles);
-			}else{
+				if(innerWidth > 800){
+					animateText(0, 0, 55, subTitles);
+				}else if(innerWidth > 650){
+					console.log("dans 650 :" + innerWidth);
+					animateText(0, 0, 45, subTitles);
+				}else{
+					animateText(0, 0, 40, subTitles);
+				}
 			}
 		})
 
@@ -240,28 +246,38 @@ const checkLabel = document.querySelector(".check-label");
 
 const navItems = document.querySelectorAll(".nav-item");
 
-console.log(navItems)
 
 const check2 = document.createElement("i");
 check2.className = "bi bi-x-lg";
 
-console.log(check2);
-
 
 const displayAsideBar = () => {
+
+
+
 	if(check.checked){
 		aside.classList.add("aside-anim");
 		checkLabel.replaceChild(check2, burgerIcon);
+
+		navItems.forEach(item => {
+			item.onclick = () => {
+				check.checked = false;
+				aside.classList.remove("aside-anim");
+				checkLabel.replaceChild(burgerIcon, check2);
+			};
+		})
 	}else{
 		aside.classList.remove("aside-anim");
 		checkLabel.replaceChild(burgerIcon, check2);
 	}
 
-	navItems.forEach(item => {
-		item.onclick = () => {
-			check.checked = false;
-		};
-	})
+
 };
+
+const elementMenu = () => {
+
+
+};
+elementMenu();
 
 check.onclick = () => displayAsideBar();

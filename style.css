@@ -103,6 +103,7 @@ nav li a:hover, .blog-article h3 a:hover{
 	position: fixed;
 	top: 18px;
 	right: 20px;
+	z-index: 500;
 	display: flex;
 	align-items: center;
 	background: #191919;
@@ -265,7 +266,8 @@ main{
 }
 
 .name-box > div{
-	margin: 50px 0 0 25px;
+	margin-top: 50px;
+	margin-left: 20px;
 }
 
 .btn{
@@ -469,18 +471,6 @@ main{
     margin-top: 120px;
 }
 
-.galary-projects::after{
-	content: "<section>";
-	margin: 35px 0 0 20px;
-	display: block;
-    font-family: 'Marck Script', cursive;
-    font-size: 18px;
-    font-style: italic;
-    color: #515152;
-    font-weight: 500;
-    line-height: 0px;
-    letter-spacing: 3px;
-}
 
 .galary-projects{
 	width: 100% !important;
@@ -826,7 +816,6 @@ textarea{
 
 .c-name, .e-mail{
 	display: block;
-	height: 100%;
 }
 
 .c-name-box, .c-email-box{
@@ -936,6 +925,9 @@ textarea{
 	transition-duration: 0.3s;
 }
 
+#check{
+	display: none;
+}
 
 .presentation-anim{
 	opacity: 1;
@@ -961,6 +953,11 @@ textarea{
 	transition-duration: .2s;
 	opacity: 1;
 }
+
+.presentation-word:hover{
+	color: #08fdd8;
+}
+
 /*---------------------------------------------------------------- class animation--------------------------------------------*/
 
 .translate-bg{
@@ -980,7 +977,8 @@ textarea{
 
 .amburger-box{
 	position: fixed;
-	right: 30px;
+	margin-top: 10px;
+	right: 13px;
 	width: 60px;
 	justify-content: center;
 	top: 50px;
@@ -1018,12 +1016,57 @@ aside{
 	justify-content: space-between;
 }
 
+.close-presentation-tag{
+	margin: 35px 0 0 20px;
+	display: block;
+    font-family: 'Marck Script', cursive;
+    font-size: 18px;
+    font-style: italic;
+    color: #515152;
+    font-weight: 500;
+    line-height: 0px;
+    letter-spacing: 3px;
+}
 
+.breck-text{
+	display: block;
+}
+
+.time-line{
+	width: 100%;
+}
 
 /*---------------------------------------------------------	media query------------------------------------------------------------------*/
 
+@media screen and (max-width : 1531px){
+		rect{
+			x: 0;
+			y: 200;
+			width: 400px;
+			height: 330px;
+		}
 
-@media screen and (max-width : 1300px){
+	.s-right{
+			padding-right: 0px;
+			margin-left: 40px;
+			width: 400px;
+			height: 330px;
+		}
+}
+
+@media screen and (max-width : 1390px){
+	.breck-text{
+		display: inline;
+	}
+
+	.sites ul{
+		width: 50%;
+		align-items: center;
+	}
+
+}
+
+@media screen and (max-width : 1250px){
 	
 	aside{
 		display: none;
@@ -1032,6 +1075,7 @@ aside{
 	.amburger-box{
 		display: flex;
 		justify-content: center;
+		border-radius: 4px;
 	}
 
 
@@ -1069,6 +1113,240 @@ aside{
 		height: 330px;
 	}
 
+	.mySelf{
+		flex-direction: column;
+	}
+
+	.s-left{
+		width: 100%;
+	}
+
+	.s-right{
+		margin: 100px auto 0 auto;
+		width: 100% !important;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#tag{
+		margin: auto;
+		height: auto;
+	}
+
+	.presentation{
+		margin-bottom: 70px;
+	}
+
+}
 
 
+@media screen and (max-width : 1020px){
+
+	.name-box{
+		margin-top: 120px;
+	}
+
+	.presentation-word{
+		font-size: 70px !important;
+	}
+
+	.description{
+		margin-top: 90px;
+	}
+
+	.section-tag{
+		margin-top: 165px;
+	}
+
+	.job{
+		letter-spacing: 3px;
+	}
+
+	.galary-projects{
+		height: 660px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 220px);
+		overflow: hidden;
+	}
+
+	.contact{
+		display: block;
+		height: 1300px !important;
+		overflow: visible;
+	}
+
+	.c-right{
+		margin-top: 120px;
+		height: 500px;
+	}
+
+}
+
+@media screen and (max-width : 800px){
+
+	.presentation-word{
+		font-size: 45px !important;
+	}
+
+	.logo-anim{
+		height: 50px;
+	}
+
+	.name{
+		line-height: 45px;
+	}
+
+	.name-box{
+		margin-left: 0px
+	}
+
+	.open-tag-html::after {
+		margin-left: 0px
+	}
+
+	.blog-article-box{
+		grid-template-columns: repeat(1, 1fr);
+    	grid-template-rows: repeat(4, 1fr);
+	}
+
+	.blog-article:nth-child(2), .blog-article:nth-child(4){
+		margin-left: 0px;
+	}
+
+	.btn{
+		height: 35px !important;
+		width: 150px !important;
+		padding: 2px 4px;
+	}
+
+	.btn span{
+		font-size: 12px;
+	}
+
+	.name-box > div{
+		margin-top: 25px;
+	}
+
+	.close-tag-html::before{
+		margin-top: 30px !important;
+	}
+
+	text{
+		font-size: 20px !important;
+	}
+
+	.job{
+		letter-spacing: 2px;
+		font-size: 13px;
+	}
+
+	.sound-box{
+		right: 13px;
+	}
+
+}
+
+@media screen and (max-width : 700px){
+
+	.presentation-word{
+		font-size: 40px !important;
+		letter-spacing: -1px;
+	}
+
+	#tag{
+		padding: 0 30px;
+	}
+
+	.close-tag-html{
+		bottom: 10px;
+	}
+}
+
+
+
+@media screen and (max-width : 500px){
+
+	.galary-projects{
+		height: auto;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(5, 230px);
+		overflow: visible;
+	}
+
+	.presentation{
+		padding-left: 10px !important;
+	}
+
+	.job{
+		letter-spacing: px;
+		font-size: 10px;
+	}
+
+	text{
+		font-size: 17px !important;
+	}
+
+	.close-tag-html::before{
+		margin-top: 100px !important;
+		left: 20px;
+	}
+
+	.c-right{
+		height: 400px;
+	}
+
+	.name-email-box{
+		display: block;
+	}
+
+	.c-name-box, .c-email-box{
+		width: 100%;
+	}
+
+	.c-email-box{
+		margin-left: 0px;
+	}
+
+	.section-tag{
+		margin-top: 260px;
+	}
+}
+
+@media screen and (max-width : 500px){
+	.s-right{
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+
+	#tag svg{
+		height: 550px;
+		
+	}
+
+	.blog-article h3 a{
+		font-size: 22px;
+	}
+
+	.awaard-honor a img{
+		height: 80px;
+	}
+
+}
+
+@media screen and (max-height : 730px){
+
+	.btn{
+		height: 35px !important;
+		width: 150px !important;
+	}
+
+	.name-box > div{
+		margin-top: 25px;
+	}
+
+	.presentation{
+		margin-bottom: 45px;
+	}
 }
